@@ -4,14 +4,17 @@ export default function ProductCard({imgSrc,title,category,price,description}){
     const[count, setCount] = useState(0);
 
     const handleIncrease=()=>{
-        setCount((count) => count + 1);
+        setCount((count) => ++count);
     }
     const handleDecrease=()=>{      
         if (count > 0) {
-            setCount((count) =>count - 1)
+            setCount((count) => --count)
         } else {
             setCount((count) =>count = 0)
         };
+    }
+    const handleChange = (e) => {
+        setCount(e.target.value)
     }
     return(
         <section className="product-card">
