@@ -1,0 +1,28 @@
+.home-page {
+    display: grid;
+    justify-content: center;
+    background-image: url('./assets/pexels-muverrihhanim-19512083.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 100vh;
+}
+
+.navigation {
+    display: flex;
+    justify-content: space-between;
+    text-decoration: none;
+}
+
+.home-page h1{
+    font-size: 3rem;
+    text-align: center;
+}
+
+.description_home {
+    font-size: 2.5rem;
+    font-weight: 300;
+}
+
+.home_button {
+    background-color: red;
+}
