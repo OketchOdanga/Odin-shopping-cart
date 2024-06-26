@@ -19,7 +19,7 @@ function Products() {
     useEffect(() => {
         const FetchProduct = async () => {
             try {
-                const postsData = await getRequestWithNativeFetch(`https://fakestoreapi.com/products?limit=8`);
+                const postsData = await getRequestWithNativeFetch(`https://fakestoreapi.com/products?limit=5`);
                 setData(postsData);
                 setError(null);
     
