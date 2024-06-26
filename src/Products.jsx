@@ -1,6 +1,7 @@
 /* Product page  1. display a list products. 2. import product images from an API */
 import { useState, useEffect } from "react"
 import ProductCard from "./Card";
+import { Navigation } from "./Nav";
 
 export const getRequestWithNativeFetch = async (url) => {
     const response = await fetch(url);
@@ -38,11 +39,7 @@ function Products() {
 
     return(
         <section className="products" id="products">
-        <div className="navigation">
-            <Link to={"/"}><Button text={'Home'}></Button></Link>
-            <Link to={"./Products"}><Button text={'Products'}></Button></Link>
-            <Link to={"./Cart"}><Button text={'Cart'}></Button></Link>
-        </div>
+            <Navigation/>
             <div>
                 {loading && (<div>Loading posts ...</div>)}
                 {error && <div>{error}</div>}
