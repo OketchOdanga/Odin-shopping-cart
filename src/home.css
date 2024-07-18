@@ -25,4 +25,9 @@
 
 .home_button {
     background-color: red;
+    transition: transform 0.25s;
+}
+
+.home_button:hover {
+    transform: scale(1.1);
 }
