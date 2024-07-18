@@ -1,47 +1,27 @@
-import { Button } from "./Home";
-import { useState } from "react";
-export default function ProductCard({imgSrc,title,category,price,description}){
-    const[count, setCount] = useState(0);
-
-    const handleIncrease=()=>{
-        setCount((count) => ++count);
-    }
-    const handleDecrease=()=>{      
-        if (count > 0) {
-            setCount((count) => --count)
-        } else {
-            setCount((count) =>count = 0)
-        };
-    }
-    const handleChange = (e) => {
-        setCount(e.target.value)
-    }
+/* eslint-disable react/prop-types */
+// eslint-disable-next-line react/prop-types
+export default function ProductCard({shopping,addToCart}){
     return(
-        <section className="product-card">
-            <div className="product-card-image">
-                <img src={imgSrc} alt="" />
-            </div>
-            <div>
-                <h3>{title}</h3>
-                <p>{category}</p>
-            </div>
-            <div className="product-card-about">
-                {description}
-            </div>
-            <div>
-                {price}
-            </div>
-            <div>
-                <div>
-                    <input type="button" value="-" onClick={handleDecrease} />
-                    <input type="button" value={count} onChange={handleChange}/>
-                    <input type="button" value="+"  onClick={handleIncrease}/>
+        <section className="cardprototype">
+            {shopping.map((product)=>(
+                <div key={product.id} className="product-card">
+                    <div className="product-card-image">
+                        <img src={product.image} alt={product.title} />
+                    </div>
+                         <div className="product-details">
+                            <h5>{product.title}</h5>
+                            <p>{product.category}</p>
+                        </div>
+                        <div>
+                            Ksh. {product.price}
+                        </div>
+                        <div className="add-to-cart">
+                            <button type="button" onClick={() => addToCart(product)}>
+                                Add to Cart
+                            </button>
+                        </div>
                 </div>
-                <div>
-                    <Button text={'Add to Cart'} backgroundColor={'red'}/>
-                </div>
-            </div>
+            ))}  
         </section>
-
     )
 }
